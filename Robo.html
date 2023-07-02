@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dancing Robot</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+    .robot {
+      position: relative;
+      width: 100px;
+      height: 150px;
+    }
+    .head {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+      border-radius: 50%;
+      top: 10px;
+      left: 25px;
+    }
+    .body {
+      position: absolute;
+      width: 40px;
+      height: 80px;
+      background-color: #e74c3c;
+      top: 60px;
+      left: 30px;
+    }
+    .left-arm,
+    .right-arm {
+      position: absolute;
+      width: 15px;
+      height: 50px;
+      background-color: #2ecc71;
+      top: 70px;
+    }
+    .left-arm {
+      left: 5px;
+    }
+    .right-arm {
+      right: 5px;
+    }
+    .left-leg,
+    .right-leg {
+      position: absolute;
+      width: 20px;
+      height: 50px;
+      background-color: #f39c12;
+      top: 130px;
+    }
+    .left-leg {
+      left: 15px;
+    }
+    .right-leg {
+      right: 15px;
+    }
+    @keyframes dance {
+      0%, 100% {
+        transform: rotate(0);
+      }
+      50% {
+        transform: rotate(30deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="robot" id="robot">
+    <div class="head"></div>
+    <div class="body"></div>
+    <div class="left-arm"></div>
+    <div class="right-arm"></div>
+    <div class="left-leg"></div>
+    <div class="right-leg"></div>
+  </div>
+
+  <script>
+    const robot = document.getElementById('robot');
+    robot.addEventListener('click', () => {
+      robot.style.animation = 'dance 2s infinite';
+    });
+  </script>
+</body>
+</html>
